@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="base_global_planner" default="navfn/NavfnROS"/>
+  <!--arg name="base_local_planner" default="teb_local_planner/TebLocalPlannerROS"/-->
+ <!--arg name="base_local_planner" default="base_local_planner/TrajectoryPlannerROS"/-->
+  <arg name="base_local_planner" default="eband_local_planner/EBandPlannerROS"/>
+  
+  
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>  
+    
+    <rosparam file="$(find controlinter)/tebconfig/ebandplanner.yaml" command="load"/>
+
+    <rosparam file="$(find controlinter)/tebconfig/common_costmap.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find controlinter)/tebconfig/common_costmap.yaml" command="load" ns="local_costmap" />
+    
+    <rosparam file="$(find controlinter)/tebconfig/local_costmap.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find controlinter)/tebconfig/global_costmap.yaml" command="load" ns="global_costmap" /> 
+
+  </node> 
+  
+</launch>

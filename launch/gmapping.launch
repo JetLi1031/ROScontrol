@@ -1,0 +1,15 @@
+<launch>
+    <node name="telop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py">
+  </node>
+
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    <param name="map_update_interval" value="5.0"/>
+	<param name="maxUrange" value="6.0"/>
+    <param name="maxRange" value="8.0"/>
+    <param name="linearUpdate" value="0.05"/>
+	<param name="angularUpdate" value="0.5"/>
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find controlinter)/config/mapping_config.rviz"/>
+
+</launch>

@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/wong/catkin_ws/devel/include/**",
+        "/home/wong/carto_ws/install_isolated/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/wong/catkin_ws/src/beginner_tutorials/include/**",
+        "/home/wong/catkin_ws/src/controlinter/include/**",
+        "/home/wong/catkin_ws/src/mobile_robot_autonomous_navigation/include/**",
+        "/home/wong/catkin_ws/src/robot_setup_tf/include/**",
+        "/home/wong/catkin_ws/src/trysomething/include/**",
+        "/home/wong/catkin_ws/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/wong/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/wong/catkin_ws/src/using_markers/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

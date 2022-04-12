@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="MyRobot2.SLDASM" xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.054304 1.3878E-17 0.021306"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.00044634"
+        ixy="6.0613E-09"
+        ixz="3.1683E-07"
+        iyy="0.00074436"
+        iyz="7.2678E-20"
+        izz="0.00098668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="R_Link">
+    <inertial>
+      <origin
+        xyz="-2.2163E-06 -0.001575 -3.6364E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="2.0894E-05"
+        ixy="1.0986E-09"
+        ixz="3.1819E-10"
+        iyy="3.552E-05"
+        iyz="1.7933E-09"
+        izz="2.0895E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/R_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointR"
+    type="continuous">
+    <origin
+      xyz="0 -0.09275 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="L_Link">
+    <inertial>
+      <origin
+        xyz="4.1242E-06 0.001575 -1.0612E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.15" />
+      <inertia
+        ixx="2.0895E-05"
+        ixy="2.0379E-09"
+        ixz="-1.7217E-10"
+        iyy="3.552E-05"
+        iyz="-5.1942E-10"
+        izz="2.0894E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/L_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointL"
+    type="continuous">
+    <origin
+      xyz="0.001 0.09275 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  
+  <link
+    name="RP_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/RP_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://controlinter/meshes/RP_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointRP"
+    type="fixed">
+    <origin
+      xyz="0.09423 0 0.11175"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RP_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint> 
+  
+  
+  
+  
+  
+
+  
+  
+</robot>

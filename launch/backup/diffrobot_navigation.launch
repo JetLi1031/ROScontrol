@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+  <!-- Arguments -->
+  <!--<arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>-->
+  <arg name="map_file" default="$(find controlinter)/maps/secondfloor.yaml"/>
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+
+
+  <!-- mybot has chassis, turtlebot has base_footprint -->
+  <!--<node pkg="tf" type="static_transform_publisher" name="base" args="0 0 0 0 0 0 chassis base_footprint 100" /> -->
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find controlinter)/launch/amcl.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find controlinter)/launch/move_base.launch">
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find controlinter)/rviz/navigation.rviz"/>
+  </group>
+</launch>

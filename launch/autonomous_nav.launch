@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="map_file" default="$(find controlinter)/maps/cartorealsecondwithodom.yaml"/>
+ <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find controlinter)/rviz/nav_config.rviz"/-->
+
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
+  </node>
+  
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+  <include file="$(find roscontrol)/launch/amcl.launch" />
+  <include file="$(find roscontrol)/launch/move_base.launch" /> 
+  
+</launch>
