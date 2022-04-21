@@ -1,4 +1,4 @@
-# ros control for navigation robot prototype
+# Ros control for navigation robot
 ## catrographer mapping pose graph slam
 <p align="center">
   <img 
